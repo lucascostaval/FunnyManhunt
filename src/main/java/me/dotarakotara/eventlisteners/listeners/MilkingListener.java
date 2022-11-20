@@ -4,6 +4,7 @@ import me.dotarakotara.eventlisteners.itens.CustomItem;
 import me.dotarakotara.eventlisteners.FunnyManhunt;
 import me.dotarakotara.eventlisteners.Interface;
 import me.dotarakotara.eventlisteners.players.PlayerPlus;
+import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.entity.Entity;
@@ -27,14 +28,16 @@ public class MilkingListener implements Listener {
         uuidToPP = vuuidToPP;
     }
 
+    private boolean isMilking(Player player) {
+        return player.getInventory().getItemInMainHand().getType() == Material.BUCKET;
+    }
+
     @EventHandler
     public void milkChicken(PlayerInteractEntityEvent e) {
         Player player = e.getPlayer();
-        if (player.getInventory().getItemInMainHand().getType() != Material.BUCKET) {
-            return;
-        }
-        if (e.getRightClicked().getType() == EntityType.CHICKEN) {
-            ItemStack chickenMilk = CustomItem.ChickenMilk();
+        EntityType mobClicked = e.getRightClicked().getType();
+        if (isMilking(player) && mobClicked == EntityType.CHICKEN) {
+            ItemStack chickenMilk = CustomItem.chickenMilk();
             player.getInventory().setItemInMainHand(chickenMilk);
             player.sendMessage(ChatColor.WHITE + "You just milked a chicken. Weird");
         }
@@ -43,10 +46,8 @@ public class MilkingListener implements Listener {
     @EventHandler
     public void milkPig(PlayerInteractEntityEvent e) {
         Player player = e.getPlayer();
-        if (player.getInventory().getItemInMainHand().getType() != Material.BUCKET) {
-            return;
-        }
-        if (e.getRightClicked().getType() == EntityType.PIG) {
+        EntityType mobClicked = e.getRightClicked().getType();
+        if (isMilking(player) && mobClicked == EntityType.PIG) {
             ItemStack pigMilk = CustomItem.pigMilk();
             player.getInventory().setItemInMainHand(pigMilk);
             player.sendMessage(ChatColor.LIGHT_PURPLE + "You just milked a pig. Pog I guess");
@@ -56,10 +57,8 @@ public class MilkingListener implements Listener {
     @EventHandler
     public void milkSheep(PlayerInteractEntityEvent e) {
         Player player = e.getPlayer();
-        if (player.getInventory().getItemInMainHand().getType() != Material.BUCKET) {
-            return;
-        }
-        if (e.getRightClicked().getType() == EntityType.SHEEP) {
+        EntityType mobClicked = e.getRightClicked().getType();
+        if (isMilking(player) && mobClicked == EntityType.SHEEP) {
             ItemStack sheepMilk = CustomItem.sheepMilk();
             player.getInventory().setItemInMainHand(sheepMilk);
             player.sendMessage(ChatColor.GRAY + "Sheep MILKING???");
@@ -69,10 +68,8 @@ public class MilkingListener implements Listener {
     @EventHandler
     public void milkCow(PlayerInteractEntityEvent e) {
         Player player = e.getPlayer();
-        if (player.getInventory().getItemInMainHand().getType() != Material.BUCKET) {
-            return;
-        }
-        if (e.getRightClicked().getType() == EntityType.COW) {
+        EntityType mobClicked = e.getRightClicked().getType();
+        if (isMilking(player) && mobClicked == EntityType.COW) {
             ItemStack cowMilk = CustomItem.cowMilk();
             player.getInventory().setItemInMainHand(cowMilk);
             player.sendMessage("Normal milking, like the old days");
@@ -82,12 +79,9 @@ public class MilkingListener implements Listener {
     @EventHandler
     public void milkFish(PlayerInteractEntityEvent e) {
         Player player = e.getPlayer();
-        if (player.getInventory().getItemInMainHand().getType() != Material.BUCKET) {
-            return;
-        }
-        Entity entity = e.getRightClicked();
-        if (entity.getType() == EntityType.COD || entity.getType() == EntityType.SALMON ||
-        entity.getType() == EntityType.TROPICAL_FISH || entity.getType() == EntityType.PUFFERFISH) {
+        EntityType mobClicked = e.getRightClicked().getType();
+        if (mobClicked == EntityType.COD || mobClicked == EntityType.SALMON
+                || mobClicked == EntityType.TROPICAL_FISH || mobClicked == EntityType.PUFFERFISH) {
             ItemStack fishMilk = CustomItem.fishMilk();
             player.getInventory().setItemInMainHand(fishMilk);
             player.sendMessage(ChatColor.AQUA + "Nice Fish Milk");
@@ -97,10 +91,8 @@ public class MilkingListener implements Listener {
     @EventHandler
     public void milkBat(PlayerInteractEntityEvent e) {
         Player player = e.getPlayer();
-        if (player.getInventory().getItemInMainHand().getType() != Material.BUCKET) {
-            return;
-        }
-        if (e.getRightClicked().getType() == EntityType.BAT) {
+        EntityType mobClicked = e.getRightClicked().getType();
+        if (isMilking(player) && mobClicked == EntityType.BAT) {
             ItemStack batMilk = CustomItem.batMilk();
             player.getInventory().setItemInMainHand(batMilk);
             player.sendMessage("Bat Milking");
@@ -110,10 +102,8 @@ public class MilkingListener implements Listener {
     @EventHandler
     public void milkSkeleton(PlayerInteractEntityEvent e) {
         Player player = e.getPlayer();
-        if (player.getInventory().getItemInMainHand().getType() != Material.BUCKET) {
-            return;
-        }
-        if (e.getRightClicked().getType() == EntityType.SKELETON) {
+        EntityType mobClicked = e.getRightClicked().getType();
+        if (isMilking(player) && mobClicked == EntityType.SKELETON) {
             ItemStack skeletonMilk = CustomItem.skeletonMilk();
             player.getInventory().setItemInMainHand(skeletonMilk);
             player.sendMessage(ChatColor.WHITE + "Milk for your bones");
@@ -123,10 +113,8 @@ public class MilkingListener implements Listener {
     @EventHandler
     public void milkZombie(PlayerInteractEntityEvent e) {
         Player player = e.getPlayer();
-        if (player.getInventory().getItemInMainHand().getType() != Material.BUCKET) {
-            return;
-        }
-        if (e.getRightClicked().getType() == EntityType.ZOMBIE) {
+        EntityType mobClicked = e.getRightClicked().getType();
+        if (isMilking(player) && mobClicked == EntityType.ZOMBIE) {
             ItemStack zombieMilk = CustomItem.zombieMilk();
             player.getInventory().setItemInMainHand(zombieMilk);
             player.sendMessage("Very Strange Milking");
@@ -136,10 +124,8 @@ public class MilkingListener implements Listener {
     @EventHandler
     public void milkCreeper(PlayerInteractEntityEvent e) {
         Player player = e.getPlayer();
-        if (player.getInventory().getItemInMainHand().getType() != Material.BUCKET) {
-            return;
-        }
-        if (e.getRightClicked().getType() == EntityType.CREEPER) {
+        EntityType mobClicked = e.getRightClicked().getType();
+        if (isMilking(player) && mobClicked == EntityType.CREEPER) {
             ItemStack creeperMilk = CustomItem.creeperMilk();
             player.getInventory().setItemInMainHand(creeperMilk);
             player.sendMessage("This MILK may EXPLODE");
@@ -148,14 +134,12 @@ public class MilkingListener implements Listener {
 
     @EventHandler
     public void milkPlayer(PlayerInteractEntityEvent e) {
-        if (e.getPlayer().getInventory().getItemInMainHand().getType() != Material.BUCKET) {
-            return;
-        }
         Player player = e.getPlayer();
-        Entity milked = e.getRightClicked();
-        if (milked.getType() == EntityType.PLAYER) {
+        EntityType milked = e.getRightClicked().getType();
+        if (isMilking(player) && milked == EntityType.PLAYER) {
             player.getInventory().getItemInMainHand().setType(Material.MILK_BUCKET);
-            player.sendMessage("You just milked " + milked.getName() + "!");
+            Bukkit.broadcastMessage(ChatColor.LIGHT_PURPLE + player.getName() + ChatColor.WHITE + " just milked "
+                    + ChatColor.AQUA + e.getRightClicked().getName() + "!");
         }
     }
 

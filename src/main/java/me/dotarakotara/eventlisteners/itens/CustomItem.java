@@ -10,130 +10,118 @@ import java.util.List;
 
 
 public class CustomItem {
-    public CustomItem() {}
-    public static ItemStack ChickenMilk() {
+    private CustomItem() {}
 
-        ItemStack item = new ItemStack(Material.MILK_BUCKET, 1);
+    private static ItemStack createItem(String displayName, String description, Material material) {
+        ItemStack item = new ItemStack(material, 1);
         ItemMeta meta = item.getItemMeta();
-        meta.setDisplayName("Chicken Milk");
+        meta.setDisplayName(displayName);
         List<String> lore = new ArrayList<String>();
-        lore.add("Milking chickens, now that is new");
+        lore.add(description);
         meta.setLore(lore);
         item.setItemMeta(meta);
 
         return item;
+
+    }
+    public static ItemStack chickenMilk() {
+
+        String name = "Chicken Milk";
+        String description = "Milking chickens, now that is new";
+        Material material = Material.MILK_BUCKET;
+
+        return CustomItem.createItem(name, description, material);
     }
 
     public static ItemStack pigMilk() {
 
-        ItemStack item = new ItemStack(Material.MILK_BUCKET, 1);
-        ItemMeta meta = item.getItemMeta();
-        meta.setDisplayName("Pig Milk");
-        List<String> lore = new ArrayList<String>();
-        lore.add("Tasty Milking, tasty life");
-        meta.setLore(lore);
-        item.setItemMeta(meta);
+        String name = "Pig Milk";
+        String description = "Tasty Milking, tasty life";
+        Material material = Material.MILK_BUCKET;
 
-        return item;
+        return CustomItem.createItem(name, description , material);
     }
 
     public static ItemStack sheepMilk() {
 
-        ItemStack item = new ItemStack(Material.MILK_BUCKET, 1);
-        ItemMeta meta = item.getItemMeta();
-        meta.setDisplayName("Sheep Milk");
-        List<String> lore = new ArrayList<String>();
-        lore.add("Sheeping Milks");
-        meta.setLore(lore);
-        item.setItemMeta(meta);
+        String name = "Sheep Milk";
+        String description = "Sheeping Milks";
+        Material material = Material.MILK_BUCKET;
 
-        return item;
+        return CustomItem.createItem(name, description, material);
     }
 
     public static ItemStack cowMilk() {
-        ItemStack item = new ItemStack(Material.MILK_BUCKET, 1);
-        ItemMeta meta = item.getItemMeta();
-        meta.setDisplayName("Cow Milk");
-        List<String> lore = new ArrayList<String>();
-        lore.add("Kinda ok I guess");
-        meta.setLore(lore);
-        item.setItemMeta(meta);
 
-        return item;
+        String name = "Cow Milk";
+        String description = "Kinda ok I guess";
+        Material material = Material.MILK_BUCKET;
+
+        return CustomItem.createItem(name, description, material);
     }
 
     public static ItemStack fishMilk() {
-        ItemStack item = new ItemStack(Material.MILK_BUCKET, 1);
-        ItemMeta meta = item.getItemMeta();
-        meta.setDisplayName("Fish Milk");
-        List<String> lore = new ArrayList<String>();
-        lore.add("Fishy business");
-        meta.setLore(lore);
-        item.setItemMeta(meta);
 
-        return item;
+        String name = "Fish Milk";
+        String description = "Fishy business";
+        Material material = Material.MILK_BUCKET;
+
+        return CustomItem.createItem(name, description, material);
     }
 
     public static ItemStack batMilk() {
 
-        ItemStack item = new ItemStack(Material.MILK_BUCKET, 1);
-        ItemMeta meta = item.getItemMeta();
-        meta.setDisplayName("Bat Milk");
-        List<String> lore = new ArrayList<String>();
-        lore.add("Bat milking is op");
-        meta.setLore(lore);
-        item.setItemMeta(meta);
+        String name = "Bat Milk";
+        String description = "Bat milking is op!";
+        Material material = Material.MILK_BUCKET;
 
-        return item;
+        return CustomItem.createItem(name, description, material);
     }
 
     public static ItemStack skeletonMilk() {
-        ItemStack item = new ItemStack(Material.MILK_BUCKET, 1);
-        ItemMeta meta = item.getItemMeta();
-        meta.setDisplayName("Skeleton Milk");
-        List<String> lore = new ArrayList<String>();
-        lore.add("Milk is good for bones... and bone is good for milk");
-        meta.setLore(lore);
-        item.setItemMeta(meta);
 
-        return item;
+        String name = "Skeleton Milk";
+        String description = "Milk is good for bones... and bone is good for milk";
+        Material material = Material.MILK_BUCKET;
+
+        return CustomItem.createItem(name, description, material);
     }
 
     public static ItemStack zombieMilk() {
-        ItemStack item = new ItemStack(Material.MILK_BUCKET, 1);
-        ItemMeta meta = item.getItemMeta();
-        meta.setDisplayName("Zombie Milk");
-        List<String> lore = new ArrayList<String>();
-        lore.add("??");
-        meta.setLore(lore);
-        item.setItemMeta(meta);
 
-        return item;
+        String name = "Zombie Milk";
+        String description = "??";
+        Material material = Material.MILK_BUCKET;
+
+        return CustomItem.createItem(name, description, material);
     }
 
     public static ItemStack creeperMilk() {
-        ItemStack item = new ItemStack(Material.MILK_BUCKET, 1);
-        ItemMeta meta = item.getItemMeta();
-        meta.setDisplayName("Creeper Milk");
-        List<String> lore = new ArrayList<String>();
-        lore.add("EXPLOSION!");
-        meta.setLore(lore);
-        item.setItemMeta(meta);
 
-        return item;
+        String name = "Creeper Milk";
+        String description = "EXPLOSION!";
+        Material material = Material.MILK_BUCKET;
+
+        return CustomItem.createItem(name, description, material);
+    }
+
+    public static ItemStack spiderMilk() {
+
+        String name = "Spider Milk";
+        String description = "String Milk";
+        Material material = Material.MILK_BUCKET;
+
+        return CustomItem.createItem(name, description, material);
+
     }
 
     public static ItemStack pigShooter() {
 
-        ItemStack item = new ItemStack(Material.STICK, 1);
-        ItemMeta meta = item.getItemMeta();
-        meta.setDisplayName("Pig Shooter");
-        List<String> lore = new ArrayList<String>();
-        lore.add("Shoots pigs because you can!");
-        meta.setLore(lore);
-        item.setItemMeta(meta);
+        String name = "Pig Shooter";
+        String description = "Shoots pigs because you can!";
+        Material material = Material.STICK;
 
-        return item;
+        return CustomItem.createItem(name, description, material);
     }
 }
 
