@@ -1,0 +1,12 @@
+name: FunnyManhunt
+version: '1.0-SNAPSHOT'
+main: me.dotarakotara.eventlisteners.FunnyManhunt
+api-version: 1.16
+
+commands:
+  choose:
+    description: Chooses to be a hunter or speedrunner
+    usage: /<command> [speedrunner/hunter]
+  skills:
+    description: Shows all the powers the player has
+    usage: /<command>
