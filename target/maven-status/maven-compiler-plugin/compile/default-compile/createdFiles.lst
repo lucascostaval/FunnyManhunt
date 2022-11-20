@@ -1,6 +1,7 @@
 me\dotarakotara\eventlisteners\Helper.class
 me\dotarakotara\eventlisteners\itens\CustomItem.class
 me\dotarakotara\eventlisteners\commands\ChooseCommand.class
+me\dotarakotara\eventlisteners\listeners\WaterInNether.class
 me\dotarakotara\eventlisteners\players\SpeedRunner.class
 me\dotarakotara\eventlisteners\FunnyManhunt.class
 me\dotarakotara\eventlisteners\listeners\DrinkingListener.class

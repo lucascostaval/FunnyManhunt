@@ -37,7 +37,7 @@ public final class FunnyManhunt extends JavaPlugin {
         ChooseCommand chooseCommand = new ChooseCommand(this, uuidToPP);
         SkillsCommand skillsCommand = new SkillsCommand(this, uuidToPP);
 
-        interface1.showMessage("Starting the server!!");
+        interface1.showMessage("Starting the server!");
         getServer().getPluginManager().registerEvents(milkingListener, this);
         getServer().getPluginManager().registerEvents(drinkingListener, this);
         getServer().getPluginManager().registerEvents(pigShootListener, this);
