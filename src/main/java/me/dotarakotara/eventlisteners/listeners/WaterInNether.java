@@ -23,6 +23,7 @@ public class WaterInNether implements Listener {
     public WaterInNether(FunnyManhunt vplugin, Map<UUID, PlayerPlus> vuuidToPP) {
         plugin = vplugin;
         uuidToPP = vuuidToPP;
+        System.out.println("here 0");
     }
 
     @EventHandler
@@ -31,10 +32,11 @@ public class WaterInNether implements Listener {
         player.sendMessage("Here 1");
         if (player.getWorld().getEnvironment() == World.Environment.NETHER && player.getInventory().getItemInMainHand().
                 getType() == Material.WATER_BUCKET && e.getAction() == Action.RIGHT_CLICK_BLOCK) {
-                player.sendMessage("Here 2");
-                Location loc = e.getClickedBlock().getLocation();
-                loc.setY(loc.getY()+1);
-                loc.getBlock().setType(Material.WATER);
+            e.setCancelled(true);
+            player.sendMessage("Here 2");
+            Location loc = e.getClickedBlock().getLocation();
+            loc.setY(loc.getY()+1);
+            loc.getBlock().setType(Material.WATER);
         }
     }
 }
