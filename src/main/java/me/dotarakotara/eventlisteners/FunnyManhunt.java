@@ -1,10 +1,12 @@
 package me.dotarakotara.eventlisteners;
 
 import me.dotarakotara.eventlisteners.commands.ChooseCommand;
+import me.dotarakotara.eventlisteners.commands.ModifyCommand;
 import me.dotarakotara.eventlisteners.commands.SkillsCommand;
 import me.dotarakotara.eventlisteners.listeners.DrinkingListener;
 import me.dotarakotara.eventlisteners.listeners.MilkingListener;
 import me.dotarakotara.eventlisteners.listeners.WaterInNether;
+import me.dotarakotara.eventlisteners.skills.ExplodeListener;
 import me.dotarakotara.eventlisteners.skills.GrassEatListener;
 import me.dotarakotara.eventlisteners.skills.PigShootListener;
 import me.dotarakotara.eventlisteners.players.PlayerPlus;
@@ -33,9 +35,11 @@ public final class FunnyManhunt extends JavaPlugin {
         PlusEatingListener plusEatingListener = new PlusEatingListener(this, uuidToPP);
         ShootArrowListener shootArrowListener = new ShootArrowListener(this, uuidToPP);
         WaterInNether waterInNetherListener = new WaterInNether(this, uuidToPP);
+        ExplodeListener explodeListener = new ExplodeListener(this, uuidToPP);
 
         ChooseCommand chooseCommand = new ChooseCommand(this, uuidToPP);
         SkillsCommand skillsCommand = new SkillsCommand(this, uuidToPP);
+        ModifyCommand modifyCommand = new ModifyCommand(this, uuidToPP);
 
         interface1.showMessage("Starting the server!");
         getServer().getPluginManager().registerEvents(milkingListener, this);
@@ -45,10 +49,12 @@ public final class FunnyManhunt extends JavaPlugin {
         getServer().getPluginManager().registerEvents(plusEatingListener, this);
         getServer().getPluginManager().registerEvents(shootArrowListener, this);
         getServer().getPluginManager().registerEvents(waterInNetherListener, this);
+        getServer().getPluginManager().registerEvents(explodeListener, this);
 
 
         getCommand("choose").setExecutor(chooseCommand);
         getCommand("skills").setExecutor(skillsCommand);
+        getCommand("modify").setExecutor(modifyCommand);
     }
 
     @Override

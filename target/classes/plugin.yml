@@ -10,3 +10,6 @@ commands:
   skills:
     description: Shows all the powers the player has
     usage: /<command>
+  modify:
+    description: Used for debugging. Returns debugging parameter
+    usage: /<command> [0/1/2/3/4] [value]

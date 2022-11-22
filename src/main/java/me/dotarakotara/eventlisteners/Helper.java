@@ -11,6 +11,16 @@ import java.util.Collection;
 import java.util.Random;
 
 public class Helper {
+
+    protected static double[] debugParameters = {1, 0, 0, 0, 0};
+
+    public static double getDebug(int i) {
+        return debugParameters[i];
+    }
+
+    public static void setDebug(int i, double value) {
+        debugParameters[i] = value;
+    }
     public static int findFirstEmpty(Inventory inv) {
         int firstEmpty;
         for (int i = 0; i < 36; i++) {

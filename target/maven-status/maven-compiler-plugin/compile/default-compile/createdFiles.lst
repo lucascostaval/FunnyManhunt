@@ -3,6 +3,7 @@ me\dotarakotara\eventlisteners\itens\CustomItem.class
 me\dotarakotara\eventlisteners\commands\ChooseCommand.class
 me\dotarakotara\eventlisteners\listeners\WaterInNether.class
 me\dotarakotara\eventlisteners\players\SpeedRunner.class
+me\dotarakotara\eventlisteners\commands\ModifyCommand.class
 me\dotarakotara\eventlisteners\FunnyManhunt.class
 me\dotarakotara\eventlisteners\listeners\DrinkingListener.class
 me\dotarakotara\eventlisteners\listeners\MilkingListener.class
@@ -13,5 +14,6 @@ me\dotarakotara\eventlisteners\skills\GrassEatListener.class
 me\dotarakotara\eventlisteners\cooldown\Cooldown.class
 me\dotarakotara\eventlisteners\players\Hunter.class
 me\dotarakotara\eventlisteners\Interface.class
+me\dotarakotara\eventlisteners\skills\ExplodeListener.class
 me\dotarakotara\eventlisteners\commands\SkillsCommand.class
 me\dotarakotara\eventlisteners\skills\PigShootListener.class

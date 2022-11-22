@@ -21,6 +21,7 @@ public class PlayerPlus {
     protected Cooldown pigpowerCD;
     protected Cooldown sheeppowerCD;
     protected Cooldown skeletonPowerCD;
+    protected Cooldown creeperPowerCD;
 
     public PlayerPlus(FunnyManhunt vplugin, Player vplayer) {
         plugin = vplugin;
@@ -31,6 +32,7 @@ public class PlayerPlus {
         pigpowerCD = new Cooldown(vplugin, this);
         sheeppowerCD = new Cooldown(vplugin, this);
         skeletonPowerCD = new Cooldown(vplugin, this);
+        creeperPowerCD = new Cooldown(vplugin, this);
     }
 
     public Player getPlayer() {
@@ -51,6 +53,10 @@ public class PlayerPlus {
 
     public Cooldown getSkeletonPowerCD() {
         return skeletonPowerCD;
+    }
+
+    public Cooldown getCreeperPowerCD() {
+        return creeperPowerCD;
     }
 
     private void addSkill(String skill) {
@@ -129,6 +135,11 @@ public class PlayerPlus {
         if (skills.contains("Creeper Power")) {
             return;
         }
+
+        ItemStack explosiveDust = CustomItem.explosiveDust();
+        Location loc = player.getLocation();
+        loc.setY(loc.getY()+0.5);
+        player.getWorld().dropItemNaturally(loc, explosiveDust);
         addSkill("Creeper Power");
     }
 }

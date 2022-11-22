@@ -123,5 +123,14 @@ public class CustomItem {
 
         return CustomItem.createItem(name, description, material);
     }
+
+    public static ItemStack explosiveDust() {
+
+        String name = "Explosive Dust";
+        String description = "Explode on click";
+        Material material = Material.GUNPOWDER;
+
+        return CustomItem.createItem(name, description, material);
+    }
 }
 

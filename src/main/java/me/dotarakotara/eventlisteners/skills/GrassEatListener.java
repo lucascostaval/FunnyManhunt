@@ -1,6 +1,7 @@
 package me.dotarakotara.eventlisteners.skills;
 
 import me.dotarakotara.eventlisteners.FunnyManhunt;
+import me.dotarakotara.eventlisteners.Helper;
 import me.dotarakotara.eventlisteners.players.PlayerPlus;
 import org.bukkit.Material;
 import org.bukkit.Sound;
@@ -17,7 +18,7 @@ public class GrassEatListener implements Listener {
     protected FunnyManhunt plugin;
     protected Map<UUID, PlayerPlus> uuidToPP;
 
-    protected int CDTime = 3;
+    protected int CDTime = 3*(int) Helper.getDebug(0);
     public GrassEatListener(FunnyManhunt vplugin, Map<UUID, PlayerPlus> vuuidToPP) {
         plugin = vplugin;
         uuidToPP = vuuidToPP;

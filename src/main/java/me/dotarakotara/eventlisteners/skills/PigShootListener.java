@@ -29,7 +29,7 @@ public class PigShootListener implements Listener {
     protected FunnyManhunt plugin;
     protected Map<UUID, PlayerPlus> uuidToPP;
 
-    protected int CDTime = 20;
+    protected int CDTime = 20*(int)Helper.getDebug(0);
     public PigShootListener(FunnyManhunt vplugin, Map<UUID, PlayerPlus> vuuidToPP) {
         plugin = vplugin;
         uuidToPP = vuuidToPP;
