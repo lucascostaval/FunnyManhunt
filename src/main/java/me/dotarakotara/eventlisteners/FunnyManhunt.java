@@ -3,15 +3,12 @@ package me.dotarakotara.eventlisteners;
 import me.dotarakotara.eventlisteners.commands.ChooseCommand;
 import me.dotarakotara.eventlisteners.commands.ModifyCommand;
 import me.dotarakotara.eventlisteners.commands.SkillsCommand;
-import me.dotarakotara.eventlisteners.listeners.DrinkingListener;
-import me.dotarakotara.eventlisteners.listeners.MilkingListener;
-import me.dotarakotara.eventlisteners.listeners.WaterInNether;
+import me.dotarakotara.eventlisteners.listeners.*;
 import me.dotarakotara.eventlisteners.skills.ExplodeListener;
 import me.dotarakotara.eventlisteners.skills.GrassEatListener;
 import me.dotarakotara.eventlisteners.skills.PigShootListener;
 import me.dotarakotara.eventlisteners.players.PlayerPlus;
 import me.dotarakotara.eventlisteners.skills.PlusEatingListener;
-import me.dotarakotara.eventlisteners.listeners.ShootArrowListener;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.HashMap;
@@ -36,6 +33,7 @@ public final class FunnyManhunt extends JavaPlugin {
         ShootArrowListener shootArrowListener = new ShootArrowListener(this, uuidToPP);
         WaterInNether waterInNetherListener = new WaterInNether(this, uuidToPP);
         ExplodeListener explodeListener = new ExplodeListener(this, uuidToPP);
+        CompassListener compassListener = new CompassListener(this, uuidToPP);
 
         ChooseCommand chooseCommand = new ChooseCommand(this, uuidToPP);
         SkillsCommand skillsCommand = new SkillsCommand(this, uuidToPP);
@@ -50,6 +48,7 @@ public final class FunnyManhunt extends JavaPlugin {
         getServer().getPluginManager().registerEvents(shootArrowListener, this);
         getServer().getPluginManager().registerEvents(waterInNetherListener, this);
         getServer().getPluginManager().registerEvents(explodeListener, this);
+        getServer().getPluginManager().registerEvents(compassListener, this);
 
 
         getCommand("choose").setExecutor(chooseCommand);

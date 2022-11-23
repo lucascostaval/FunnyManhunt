@@ -26,7 +26,7 @@ public class ShootArrowListener implements Listener {
     protected FunnyManhunt plugin;
     protected Map<UUID, PlayerPlus> uuidToPP;
 
-    protected int CDTime = 10*(int)Helper.getDebug(0);
+    protected int CDTime = 10;
 
     public ShootArrowListener(FunnyManhunt vplugin, Map<UUID, PlayerPlus> vuuidToPP) {
         plugin = vplugin;

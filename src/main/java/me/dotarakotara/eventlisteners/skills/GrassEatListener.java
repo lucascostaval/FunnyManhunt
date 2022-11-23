@@ -18,7 +18,7 @@ public class GrassEatListener implements Listener {
     protected FunnyManhunt plugin;
     protected Map<UUID, PlayerPlus> uuidToPP;
 
-    protected int CDTime = 3*(int) Helper.getDebug(0);
+    protected int CDTime = 3;
     public GrassEatListener(FunnyManhunt vplugin, Map<UUID, PlayerPlus> vuuidToPP) {
         plugin = vplugin;
         uuidToPP = vuuidToPP;

@@ -18,16 +18,19 @@ public class PlayerPlus {
     protected Set<String> skills;
     protected FunnyManhunt plugin;
 
+    protected Map<UUID, PlayerPlus> uuidToPP;
+
     protected Cooldown pigpowerCD;
     protected Cooldown sheeppowerCD;
     protected Cooldown skeletonPowerCD;
     protected Cooldown creeperPowerCD;
 
-    public PlayerPlus(FunnyManhunt vplugin, Player vplayer) {
+    public PlayerPlus(FunnyManhunt vplugin, Player vplayer, Map<UUID, PlayerPlus> vuuidToPP) {
         plugin = vplugin;
         player = vplayer;
         uuid = vplayer.getUniqueId();
         skills = new HashSet<String>();
+        uuidToPP = vuuidToPP;
 
         pigpowerCD = new Cooldown(vplugin, this);
         sheeppowerCD = new Cooldown(vplugin, this);

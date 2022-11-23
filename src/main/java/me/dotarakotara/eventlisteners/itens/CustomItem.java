@@ -132,5 +132,14 @@ public class CustomItem {
 
         return CustomItem.createItem(name, description, material);
     }
+
+    public static ItemStack runnerTracker() {
+
+        String name = "Runner Tracker";
+        String description = "Good luck";
+        Material material = Material.COMPASS;
+
+        return CustomItem.createItem(name, description, material);
+    }
 }
 

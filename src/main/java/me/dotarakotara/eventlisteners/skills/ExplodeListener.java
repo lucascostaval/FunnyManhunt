@@ -22,7 +22,7 @@ public class ExplodeListener implements Listener {
     protected FunnyManhunt plugin;
     protected Map<UUID, PlayerPlus> uuidToPP;
 
-    protected int CDTime = 20*(int)Helper.getDebug(2);
+    protected int CDTime = 20;
     public ExplodeListener(FunnyManhunt vplugin, Map<UUID, PlayerPlus> vuuidToPP) {
         plugin = vplugin;
         uuidToPP = vuuidToPP;
