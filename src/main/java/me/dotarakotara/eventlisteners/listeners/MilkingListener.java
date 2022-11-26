@@ -133,6 +133,17 @@ public class MilkingListener implements Listener {
     }
 
     @EventHandler
+    public void milkSpider(PlayerInteractEntityEvent e) {
+        Player player = e.getPlayer();
+        EntityType mobClicked = e.getRightClicked().getType();
+        if (isMilking(player) && (mobClicked == EntityType.SPIDER || mobClicked == EntityType.CAVE_SPIDER)) {
+            ItemStack spiderMilk = CustomItem.spiderMilk();
+            player.getInventory().setItemInMainHand(spiderMilk);
+            player.sendMessage("Milking spiders, watch out for the strings!");
+        }
+    }
+
+    @EventHandler
     public void milkPlayer(PlayerInteractEntityEvent e) {
         Player player = e.getPlayer();
         EntityType milked = e.getRightClicked().getType();

@@ -17,3 +17,4 @@ me\dotarakotara\eventlisteners\Interface.class
 me\dotarakotara\eventlisteners\skills\ExplodeListener.class
 me\dotarakotara\eventlisteners\commands\SkillsCommand.class
 me\dotarakotara\eventlisteners\skills\PigShootListener.class
+me\dotarakotara\eventlisteners\listeners\CompassListener.class

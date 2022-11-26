@@ -145,4 +145,15 @@ public class PlayerPlus {
         player.getWorld().dropItemNaturally(loc, explosiveDust);
         addSkill("Creeper Power");
     }
+
+    public void gainSpiderPower() {
+        if (skills.contains("Spider Power")) {
+            return;
+        }
+        ItemStack cobShooter = CustomItem.cobShooter();
+        Location loc = player.getLocation();
+        loc.setY(loc.getY()+0.5);
+        player.getWorld().dropItemNaturally(loc, cobShooter);
+        addSkill("Spider Power");
+    }
 }

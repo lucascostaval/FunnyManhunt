@@ -58,15 +58,6 @@ public class ExplodeListener implements Listener {
             double distance = v1.distance(v2);
             Vector direction = v2.subtract(v1).normalize();
             double force = getForce(distance);
-            /*
-            player.sendMessage("V1 loc");
-            player.sendMessage("X: " + v1.getX() + " |Y: " + v1.getY() + " |Z : " + v1.getZ());
-            player.sendMessage("V2 entity loc");
-            player.sendMessage("X: " + v2.getX() + " |Y: " + v2.getY() + " |Z : " + v2.getZ());
-            player.sendMessage("mob: " + affected.getName());
-            player.sendMessage("distance: " + distance);
-            player.sendMessage("force: " + String.valueOf(force));
-             */
             affected.setVelocity(direction.multiply(force));
         }
 

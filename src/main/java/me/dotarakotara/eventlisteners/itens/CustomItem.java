@@ -133,6 +133,15 @@ public class CustomItem {
         return CustomItem.createItem(name, description, material);
     }
 
+    public static ItemStack cobShooter() {
+
+        String name = "Cob Shooter";
+        String description = "Web them up!";
+        Material material = Material.STRING;
+
+        return CustomItem.createItem(name, description, material);
+    }
+
     public static ItemStack runnerTracker() {
 
         String name = "Runner Tracker";

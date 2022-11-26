@@ -167,4 +167,20 @@ public class DrinkingListener implements Listener {
             pp.gainCreeperPower();
         }
     }
+
+    @EventHandler
+    public void onDrinkSpiderMilk(PlayerItemConsumeEvent e) {
+        ItemStack milk = e.getItem();
+        Player player = e.getPlayer();
+
+        if (!uuidToPP.containsKey(player.getUniqueId())) {
+            return;
+        }
+        if (milk.getItemMeta().getDisplayName().equalsIgnoreCase("Spider Milk")) {
+            e.setCancelled(true);
+            player.getInventory().setItemInMainHand(new ItemStack(Material.BUCKET, 1));
+            PlayerPlus pp = uuidToPP.get(player.getUniqueId());
+            pp.gainSpiderPower();
+        }
+    }
 }
