@@ -24,6 +24,7 @@ public class PlayerPlus {
     protected Cooldown sheeppowerCD;
     protected Cooldown skeletonPowerCD;
     protected Cooldown creeperPowerCD;
+    protected Cooldown spiderPowerCD;
 
     public PlayerPlus(FunnyManhunt vplugin, Player vplayer, Map<UUID, PlayerPlus> vuuidToPP) {
         plugin = vplugin;
@@ -36,6 +37,7 @@ public class PlayerPlus {
         sheeppowerCD = new Cooldown(vplugin, this);
         skeletonPowerCD = new Cooldown(vplugin, this);
         creeperPowerCD = new Cooldown(vplugin, this);
+        spiderPowerCD = new Cooldown(vplugin, this);
     }
 
     public Player getPlayer() {
@@ -60,6 +62,10 @@ public class PlayerPlus {
 
     public Cooldown getCreeperPowerCD() {
         return creeperPowerCD;
+    }
+
+    public Cooldown getSpiderPowerCD() {
+        return spiderPowerCD;
     }
 
     private void addSkill(String skill) {

@@ -8,6 +8,7 @@ me\dotarakotara\eventlisteners\FunnyManhunt.class
 me\dotarakotara\eventlisteners\listeners\DrinkingListener.class
 me\dotarakotara\eventlisteners\listeners\MilkingListener.class
 me\dotarakotara\eventlisteners\listeners\ShootArrowListener.class
+me\dotarakotara\eventlisteners\skills\CobShooterListener.class
 me\dotarakotara\eventlisteners\skills\PlusEatingListener.class
 me\dotarakotara\eventlisteners\players\PlayerPlus.class
 me\dotarakotara\eventlisteners\skills\GrassEatListener.class
